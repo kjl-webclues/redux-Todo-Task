@@ -7,7 +7,6 @@ import {addTodo, deleteTodo, editTodo,updated, removeTodo, checked, unChecked, s
 const Todo = () => {
     const [inputData, setInputData] = useState('');
     const list = useSelector((state) => state.todoReducer.list);
-    // const isEditing = useSelector((state) => state.todoReducer.isEditing)
     const dispatch = useDispatch();
 
     return (
@@ -19,7 +18,6 @@ const Todo = () => {
                    onChange={(event)=> setInputData(event.target.value)}/>
 
             <button onClick = {() => dispatch(addTodo(inputData), setInputData(''))}>+</button>
-            {/* {isEditing ? "update" : "submit"} */}
             {
                 list.map((elem, index) =>{ 
                     return(
